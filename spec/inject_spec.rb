@@ -106,4 +106,27 @@ describe Array do
       expect([2,3].inject(2, :**)).to eq 64
     end   
   end
+
+  context "can compare numbers to each other" do
+    it "can check to see if one number is greater than another" do
+      expect([1,2].inject(:<)).to be true
+    end
+
+    it "can check is less than or equal to" do
+      expect([2,2].inject(:<=)).to be true
+    end
+
+    it "can check to see if two numbers are the same" do
+      expect([1,1].inject(:==)).to be true
+    end
+
+    it "can check to see if two numbers are not the same" do
+      expect([1,2].inject(:!=)).to be true
+    end
+
+    it "can return -1, 0, 1 depending on if numbers are same or different" do
+      expect([1,2].inject(:<=>)). to eq -1
+    end
+
+  end
 end
