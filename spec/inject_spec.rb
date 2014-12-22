@@ -24,6 +24,10 @@ describe Array do
     it "can find the remainder after divided" do
       expect([1,2,3,4].inject{|memo, item| memo % item}).to eq 1
     end
+
+    it "can prefrom exponential calculation" do
+      expect([1,2,3,4].inject{|memo, item| memo ** item}).to eq 1
+    end
   end
 
   context "with a symbol" do 
@@ -44,6 +48,10 @@ describe Array do
 
     it "can find the remainder after divided" do
       expect([1,2,3,4].inject(:%)).to eq 1
+    end
+
+    it "can prefrom exponential calculation" do
+      expect([1,2,3,4].inject(:**)).to eq 1
     end
   end
 
@@ -67,6 +75,10 @@ describe Array do
     it "can find the remainder after divided with a starting point" do
       expect([1,2,3,4].inject(10){|memo, item| memo % item}).to eq 0
     end
+
+    it "can prefrom exponential calculation with a starting point" do
+      expect([2,3].inject(2){|memo, item| memo ** item}).to eq 64
+    end
   end
   
   context "with a symbol and an argument" do
@@ -88,6 +100,10 @@ describe Array do
 
     it "can find the remainder after divided" do
       expect([1,2,3,4].inject(10, :%)).to eq 0
-    end    
+    end
+
+    it "can prefrom exponential calculation with symbol and argument" do
+      expect([2,3].inject(2, :**)).to eq 64
+    end   
   end
 end
