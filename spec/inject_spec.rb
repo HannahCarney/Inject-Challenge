@@ -127,6 +127,14 @@ describe Array do
     it "can return -1, 0, 1 depending on if numbers are same or different" do
       expect([1,2].inject(:<=>)). to eq -1
     end
+  end
+
+    context "can work with words as well as numnbers" do
+
+    it "can find the longest word" do
+      expect([:cat, :hat, :mouse].inject{|memo, word| memo.length > word.length ? memo : word}).to eq(:mouse)
+    end
+
 
   end
 end
