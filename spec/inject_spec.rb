@@ -20,6 +20,10 @@ describe Array do
     it "can divide numbers and rounds them to integer" do
       expect([1,2,3,4].inject{|memo, item| memo / item}).to eq 0
     end
+
+    it "can find the remainder after divided" do
+      expect([1,2,3,4].inject{|memo, item| memo % item}).to eq 1
+    end
   end
 
   context "with a symbol" do 
@@ -37,6 +41,10 @@ describe Array do
     it "can divide numbers" do
       expect([1,2,3,4].inject(:/)).to eq 0
     end
+
+    it "can find the remainder after divided" do
+      expect([1,2,3,4].inject(:%)).to eq 1
+    end
   end
 
   context "with a argument and block" do
@@ -45,7 +53,7 @@ describe Array do
     end
 
     it "can minus numbers with a starting point" do
-      expect([1,2,3,4].inject(10){|memo, item| memo - item}). to eq 0
+      expect([1,2,3,4].inject(10){|memo, item| memo - item}).to eq 0
     end
 
     it "can multiply numbers with a starting point" do
@@ -54,6 +62,10 @@ describe Array do
 
     it "can divide numbers with a starting point" do
       expect([1,2,3,4].inject(10){|memo, item| memo / item}).to eq 0
+    end
+
+    it "can find the remainder after divided with a starting point" do
+      expect([1,2,3,4].inject(10){|memo, item| memo % item}).to eq 0
     end
   end
   
@@ -72,6 +84,10 @@ describe Array do
 
     it "can divide numbers with a starting point and a symbol" do
       expect([1,2,3,4].inject(10, :/)).to eq 0
+    end
+
+    it "can find the remainder after divided" do
+      expect([1,2,3,4].inject(10, :%)).to eq 0
     end    
   end
 end
