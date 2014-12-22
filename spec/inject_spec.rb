@@ -32,16 +32,30 @@ describe Array do
   end
 
   context "with a argument and block" do
-    it "can add numbers together" do
+    it "can add numbers together with a starting point" do
       expect([1,2,3,4].inject(10){|memo, item| memo + item}).to eq 20
     end
 
-    it "can minus numbers" do
+    it "can minus numbers with a starting point" do
       expect([1,2,3,4].inject(10){|memo, item| memo - item}). to eq 0
     end
 
-    it "can multiply numbers" do
+    it "can multiply numbers with a starting point" do
       expect([1,2,3,4].inject(10){|memo, item| memo * item}). to eq 240
     end
-  end  
+  end
+  
+  context "with a symbol and an argument" do
+    it "can add with a starting point and a symbol" do
+      expect([1,2,3,4].inject(10,:+)).to eq 20
+    end
+
+    it "can minus with a starting point and a symbol" do
+      expect([1,2,3,4].inject(10, :-)).to eq 0
+    end
+    
+    it "can multiply with a starting point and a symbol" do
+      expect([1,2,3,4].inject(10, :*)).to eq 240
+    end    
+  end
 end
