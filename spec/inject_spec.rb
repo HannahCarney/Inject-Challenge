@@ -40,25 +40,31 @@ describe Array do
       expect([1,2,3,4].inject(:+)). to eq 10
       expect([1,2,3,4].my_inject(:+)). to eq 10
     end
-  #   it "can minus numners" do
-  #     expect([1,2,3,4].inject(:-)).to eq -8
-  #   end
+    it "can minus numners" do
+      expect([1,2,3,4].inject(:-)).to eq -8
+      expect([1,2,3,4].my_inject(:-)).to eq -8
 
-  #   it "can multiply numbers" do
-  #     expect([1,2,3,4].inject(:*)).to eq 24
-  #   end
+    end
 
-  #   it "can divide numbers" do
-  #     expect([1,2,3,4].inject(:/)).to eq 0
-  #   end
+    it "can multiply numbers" do
+      expect([1,2,3,4].inject(:*)).to eq 24
+      expect([1,2,3,4].my_inject(:*)).to eq 24
+    end
 
-  #   it "can find the remainder after divided" do
-  #     expect([1,2,3,4].inject(:%)).to eq 1
-  #   end
+    it "can divide numbers" do
+      expect([1,2,3,4].inject(:/)).to eq 0
+      expect([1,2,3,4].my_inject(:/)).to eq 0
+    end
 
-  #   it "can prefrom exponential calculation" do
-  #     expect([1,2,3,4].inject(:**)).to eq 1
-  #   end
+    it "can find the remainder after divided" do
+      expect([1,2,3,4].inject(:%)).to eq 1
+      expect([1,2,3,4].my_inject(:%)).to eq 1
+    end
+
+    it "can prefrom exponential calculation" do
+      expect([1,2,3,4].inject(:**)).to eq 1
+      expect([1,2,3,4].my_inject(:**)).to eq 1
+    end
   end
 
   # context "with a argument and block" do

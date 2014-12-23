@@ -2,19 +2,17 @@ class Array
 
  def my_inject(*args)
    copy = self.dup
+   memo = copy.shift
       if block_given? 
-        memo = copy.shift
         copy.each do |item| 
         memo = yield memo, item 
         end
         memo
-     else 
-        args = true
-        symbol = copy.shift
+     else #args   
         copy.each do |item|
-         symbol = symbol + item
+        memo = memo.send(args[0], item)
         end
-        symbol
+        memo
      end
 
   end
