@@ -14,22 +14,26 @@ describe Array do
       expect([1,2,3,4].my_inject{|memo, item| memo - item}). to eq -8
     end
 
-  #   it "can multiply numbers" do
-  #     expect([1,2,3,4].inject{|memo, item| memo * item}).to eq 24
-  #   end
+    it "can multiply numbers" do
+      expect([1,2,3,4].inject{|memo, item| memo * item}).to eq 24
+      expect([1,2,3,4].my_inject{|memo, item| memo * item}). to eq 24
+    end
 
-  #   it "can divide numbers and rounds them to integer" do
-  #     expect([1,2,3,4].inject{|memo, item| memo / item}).to eq 0
-  #   end
+    it "can divide numbers and rounds them to integer" do
+      expect([1,2,3,4].inject{|memo, item| memo / item}).to eq 0
+      expect([1,2,3,4].my_inject{|memo, item| memo / item}). to eq 0
+    end
 
-  #   it "can find the remainder after divided" do
-  #     expect([1,2,3,4].inject{|memo, item| memo % item}).to eq 1
-  #   end
+    it "can find the remainder after divided" do
+      expect([1,2,3,4].inject{|memo, item| memo % item}).to eq 1
+      expect([1,2,3,4].inject{|memo, item| memo % item}).to eq 1
+    end
 
-  #   it "can prefrom exponential calculation" do
-  #     expect([1,2,3,4].inject{|memo, item| memo ** item}).to eq 1
-  #   end
-  # end
+    it "can prefrom exponential calculation" do
+      expect([1,2,3,4].inject{|memo, item| memo ** item}).to eq 1
+      expect([1,2,3,4].inject{|memo, item| memo ** item}).to eq 1
+    end
+  end
 
   # context "with a symbol" do 
   #   it "can add numbers together" do
@@ -117,9 +121,9 @@ describe Array do
   #     expect([2,2].inject(:<=)).to be true
   #   end
 
-    it "can check to see if two numbers are the same" do
-      expect([1,1].inject(:==)).to be true
-    end
+    # it "can check to see if two numbers are the same" do
+    #   expect([1,1].inject(:==)).to be true
+    # end
 
 #     it "can check to see if two numbers are not the same" do
 #       expect([1,2].inject(:!=)).to be true
@@ -137,5 +141,5 @@ describe Array do
 #     end
 
 
-  end
+
 end
