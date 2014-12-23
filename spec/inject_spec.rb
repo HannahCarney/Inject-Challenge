@@ -26,19 +26,20 @@ describe Array do
 
     it "can find the remainder after divided" do
       expect([1,2,3,4].inject{|memo, item| memo % item}).to eq 1
-      expect([1,2,3,4].inject{|memo, item| memo % item}).to eq 1
+      expect([1,2,3,4].my_inject{|memo, item| memo % item}).to eq 1
     end
 
     it "can prefrom exponential calculation" do
       expect([1,2,3,4].inject{|memo, item| memo ** item}).to eq 1
-      expect([1,2,3,4].inject{|memo, item| memo ** item}).to eq 1
+      expect([1,2,3,4].my_inject{|memo, item| memo ** item}).to eq 1
     end
   end
 
-  # context "with a symbol" do 
-  #   it "can add numbers together" do
-  #     expect([1,2,3,4].inject(:+)). to eq 10
-  #   end
+  context "with a symbol" do 
+    it "can add numbers together" do
+      expect([1,2,3,4].inject(:+)). to eq 10
+      expect([1,2,3,4].my_inject(:+)). to eq 10
+    end
   #   it "can minus numners" do
   #     expect([1,2,3,4].inject(:-)).to eq -8
   #   end
@@ -58,7 +59,7 @@ describe Array do
   #   it "can prefrom exponential calculation" do
   #     expect([1,2,3,4].inject(:**)).to eq 1
   #   end
-  # end
+  end
 
   # context "with a argument and block" do
   #   it "can add numbers together with a starting point" do
