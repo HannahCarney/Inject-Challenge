@@ -8,11 +8,11 @@ class Array
         memo = yield memo, item 
         end
         memo
-     else #args   
+     else #args
         copy.each do |item|
-        memo = memo.send(args[0], item)
+        memo = memo.send args[0], item
         end
-        memo
+       memo
      end
 
   end
